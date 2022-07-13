@@ -1,15 +1,12 @@
-** add any badgets for the project (CI, code quality, etc.) **
+# React-Typescript Starter
 
-# DX Marketing Website
+## What is the React-Typescript Starter template?
 
-## What is the DX Marketing Website?
-
-DX Marketing Website
+React Stater Template is a project template made with Typescript, Styled-components, Redux/Easy-peasy for state-management, Cypress for testing, Material-UI, Absolute imports and other react components
 
 ## About the project
 
-- Website: <a href="#" target="_blank">example.com</a>
-- Authors: <a href="https://www.zimmerman.team/" target="_blank">Zimmerman</a>
+- Author: <a href="https://www.godswill.tech/" target="_blank">Godswill Edet</a>
 
 ## Installing
 
@@ -25,18 +22,6 @@ DX Marketing Website
 From the root folder:
 
 `yarn install`
-
-#### Configuration
-
-In the root folder:
-
-- create `.env` file
-- add:
-
-```
-  NODE_PATH=src/app/
-  <any other environment variables needed>
-```
 
 #### Run the app
 
@@ -58,28 +43,6 @@ Build files should be in `build`
 
 Run e2e tests: `yarn cy:open`
 
-## Docker
-
-| Name           | Recommended version |
-| -------------- | ------------------- |
-| Docker         | latest              |
-| docker-compose | latest              |
-
-In the root folder:
-
-- create `.env` file
-- add:
-
-```
-  NODE_PATH=src/app/
-  REACT_APP_MAPBOX_TOKEN=<mapbox_token>
-  REACT_APP_ODATA_API_URL=<TGF_API_url>
-```
-
-`docker-compose build`
-
-`docker-compose up`
-
 App should be running on <http://localhost:3000>
 
 ---
@@ -100,7 +63,7 @@ Behavior Driven Development (BDD) is an Agile process designed to keep focus on 
 
 A JavaScript library for building declarative component-based user interfaces
 
-### redux
+### Redux / (Easy-peasy)
 
 Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test
 
@@ -108,19 +71,27 @@ Redux is a predictable state container for JavaScript apps. It helps you write a
 
 ### styled components
 
-styled-components utilises tagged template literals to style your components. It removes the mapping between components and styles. This means that when you're defining your styles, you're actually creating a normal React component, that has your styles attached to it.
+styled-components utilises tagged template literals to style your components. It removes the mapping between components and styles. This means that when you're defining your styles, you're actually creating a normal React component, that has your styles attached to it. Here we use the css prop from styled-components
+e.g
+`
+In your style.ts file
 
-### storybook
+import { css } from "styled-components/macro;
 
-Storybook is a UI development environment and playground for UI components. The tool enables users to create components independently and showcase components interactively in an isolated development environment.
+export const navbarCss=css`width:100%; height:4rem; background-color:red;`
+
+Then in your main react component file
+import the style name and apply
+
+import { navbarCss } from "./style.ts"
+
+<nav css={navbarCss}> I am a navbar </nav>
+
+`
 
 ## Code quality
 
 ### eslint
-
-### stylelint
-
-A linter that helps you avoid errors and enforce conventions in your styles.
 
 ## Testing
 
@@ -128,18 +99,4 @@ A linter that helps you avoid errors and enforce conventions in your styles.
 
 Cypress is a next generation front end testing tool built for the modern web.
 
-## CI/CD
-
-### circle ci
-
-CircleCI's continuous integration and delivery platform makes it easy for teams of all sizes to rapidly build and release quality software at scale.
-
-## Performance
-
-### lighthouse
-
-Lighthouse is an open-source, automated tool for improving the quality of web pages. You can run it against any web page, public or requiring authentication. It has audits for performance, accessibility, progressive web apps, and more.
-
-## Can I contribute?
-
-Yes! We are mainly looking for coders to help on the project. If you are a coder feel free to _Fork_ the repository and send us Pull requests!
+## Absolute Import paths
