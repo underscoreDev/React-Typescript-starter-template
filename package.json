@@ -54,8 +54,8 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "cypress open",
+    "prettier": "prettier --config .prettierrc \"cypress/**/*.ts\" --write"
   },
   "browserslist": {
     "production": [
@@ -68,5 +68,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "eslintIgnore": [
+    "*.cy.ts",
+    "*.spec.ts",
+    "*.test.ts",
+    "*.config.ts"
+  ]
 }
